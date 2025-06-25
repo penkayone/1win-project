@@ -1,4 +1,3 @@
-// Крутая поддержка: меню НЕ закрывается мгновенно
 const countryBlock = document.querySelector('.footer__country');
 countryBlock.addEventListener('mouseenter', () => {
     countryBlock.classList.add('footer__country--open');
@@ -28,20 +27,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function adjustDropdownPosition() {
+        const container = document.querySelector('.container');
+        const menu = moreMenu;
+        if (!menu || menu.children.length === 0) return;
+
+        menu.style.right = '';
+        menu.style.left = '';
+
+        const menuRect = menu.getBoundingClientRect();
+        const containerRect = container.getBoundingClientRect();
+
+        if (menuRect.right > containerRect.right) {
+            menu.style.right = '0';
+            menu.style.left = 'auto';
+        } else {
+            menu.style.right = '';
+            menu.style.left = '';
+        }
+    }
+
     function redistributeMenu() {
         for (const li of originalOrder) {
             navList.insertBefore(li, moreLi);
         }
         moreMenu.innerHTML = '';
 
+        if (window.innerWidth >= 1200) {
+            moreLi.style.display = 'none';
+            toggleMoreArrow(false);
+            moreLi.classList.add('disabled');
+            moreLi.classList.remove('open');
+            return;
+        }
+
         const navWidth = navList.offsetWidth - moreLi.offsetWidth - 20;
         let usedWidth = 0;
         let mustBeVisible = [];
         let mustGoToMore = [];
-
-        if (window.innerWidth >= 1200) {
-            moreLi.style.display = '';
-        }
 
         if (window.innerWidth < 900) {
             for (const li of navItems) {
@@ -75,20 +98,17 @@ document.addEventListener('DOMContentLoaded', function() {
             moreMenu.appendChild(li);
         });
 
-        if (mustGoToMore.length > 0 || window.innerWidth >= 1200) {
-            moreLi.style.display = '';
-        } else {
-            moreLi.style.display = 'none';
-        }
-
         if (mustGoToMore.length > 0) {
+            moreLi.style.display = '';
             toggleMoreArrow(true);
             moreLi.classList.remove('disabled');
         } else {
+            moreLi.style.display = 'none';
             toggleMoreArrow(false);
             moreLi.classList.add('disabled');
             moreLi.classList.remove('open');
         }
+        setTimeout(adjustDropdownPosition, 10);
     }
 
     let canOpenMore = false;
@@ -98,7 +118,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     moreLi.addEventListener('mouseenter', () => {
         updateMoreCanOpen();
-        if (canOpenMore) moreLi.classList.add('open');
+        if (canOpenMore) {
+            moreLi.classList.add('open');
+            adjustDropdownPosition();
+        }
     });
     moreLi.addEventListener('mouseleave', () => {
         moreLi.classList.remove('open');
@@ -110,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
         moreLi.classList.toggle('open');
+        adjustDropdownPosition();
         e.preventDefault();
     });
 
