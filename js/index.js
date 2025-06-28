@@ -147,3 +147,35 @@ document.addEventListener('DOMContentLoaded', function() {
         updateMoreCanOpen();
     }, 150);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const countryBlock = document.querySelector('.footer__country');
+    const countryBtn = document.getElementById('countryBtn');
+    function handleMobileClick(e) {
+        if (window.innerWidth <= 900) {
+            e.preventDefault();
+            countryBlock.classList.toggle('footer__country--open');
+        }
+    }
+    function handleDocumentClick(e) {
+        if (
+            window.innerWidth <= 900 &&
+            countryBlock.classList.contains('footer__country--open') &&
+            !countryBlock.contains(e.target)
+        ) {
+            countryBlock.classList.remove('footer__country--open');
+        }
+    }
+    countryBlock.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 900) {
+            countryBlock.classList.add('footer__country--open');
+        }
+    });
+    countryBlock.addEventListener('mouseleave', () => {
+        if (window.innerWidth > 900) {
+            countryBlock.classList.remove('footer__country--open');
+        }
+    });
+    countryBtn.addEventListener('click', handleMobileClick);
+    document.addEventListener('click', handleDocumentClick);
+});
