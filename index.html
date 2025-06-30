@@ -132,11 +132,51 @@
         <img src="assets/icons/aviator-icon.svg" class="mobile-bottom-nav__icon" alt="Aviator"/>
         Aviator
     </a>
-    <a href="#" class="mobile-bottom-nav__item">
+    <a href="#" class="mobile-bottom-nav__item mobile-bottom-nav__item--menu">
         <img src="assets/icons/menu-icon.svg" class="mobile-bottom-nav__icon" alt="Menu"/>
         Menu
     </a>
 </nav>
+<div class="mobile-menu-overlay" id="mobileMenu">
+    <div class="mobile-menu">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">&times;</button>
+        <div class="mobile-menu__top">
+            <button class="mobile-menu__btn mobile-menu__btn--login">Log In</button>
+            <button class="mobile-menu__btn mobile-menu__btn--signup">Sign Up</button>
+        </div>
+        <ul class="mobile-menu__list">
+            <li><a href="#"><img src="assets/icons/app-icon.svg" alt="">App</a></li>
+            <li><a href="#"><img src="assets/icons/gift-icon.svg" alt="">Bonus</a></li>
+            <li><a href="#"><img src="assets/icons/promotion-icon.svg" alt="">Promotion</a></li>
+            <li class="menu-dropdown">
+                <button class="menu-dropdown__toggle" type="button">
+                    <img src="assets/icons/casino-icon.svg" alt="">Casino
+                    <span class="dropdown-arrow">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M6 9L11 14L16 9" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </span>
+                </button>
+                <ul class="menu-dropdown__list">
+                    <li><a href="#"><img src="assets/icons/aviator-icon.svg" alt="">Aviator</a></li>
+                    <li><a href="#"><img src="assets/icons/sport-icon.svg" alt="">Sport</a></li>
+                    <li><a href="#"><img src="assets/icons/payments-icon.svg" alt="">Payments</a></li>
+                </ul>
+            </li>
+        </ul>
+        <button class="mobile-menu__download">
+            Download app
+            <img src="assets/icons/apple-icon.svg" alt="iOS"/>
+            <img src="assets/icons/playmarket-icon.svg" alt="Android"/>
+        </button>
+        <div class="mobile-menu__lang">
+            <button class="mobile-menu__lang-btn">
+                <img src="assets/icons/flag-india.svg" alt="EN"/> EN
+            </button>
+        </div>
+    </div>
+</div>
+
 <div class="container">
     <section class="main-block">
         <div class="main-block__wrapper">
@@ -566,6 +606,169 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+    <section class="markets-block">
+        <div class="markets-block__main-grid">
+            <div class="markets-block__img-wrap">
+                <img src="assets/img/markets-main.png" alt="1win Betting Markets" class="markets-block__img">
+            </div>
+            <div class="markets-block__info">
+                <h2 class="markets-block__title">1win Betting Markets (Or Casino Crash Games)</h2>
+                <p class="markets-block__desc">
+                    The bookmaker offers 42 different sports with a wide coverage of minor and world events,
+                    championships, and tournaments. The platform offers quickly refreshing odds and detailed statistics
+                    on each event. It helps you make a well-informed decision and become a real 1win pro. Below, you can
+                    check the most popular sports markets among Canadian bettors.
+                </p>
+            </div>
+        </div>
+        <div class="markets-block__cards">
+            <div class="markets-card">
+                <div class="markets-card__icon">
+                    <img src="assets/icons/soccer-icon.svg" alt="Volleyball">
+                </div>
+                <div class="markets-card__content">
+                    <h3 class="markets-card__title">Volleyball</h3>
+                    <p class="markets-card__desc">
+                        1win Canada is a leading multi-language online casino and bookmaker that operates under the
+                        Curacao license. The platform features positive feedback from regular customers on independent
+                        review sites (for example, 3.9 of 5 possible on Trustpilot and 8/10 on CasinoMentor).
+                        <br><br>
+                        The site offers live streams and competitive odds on most minor and world sports events. If you
+                        are a gambling fan, 1win in Canada offers thousands of slots, table, card, crash, and live
+                        dealer games. To boost your gaming/betting experience, feel free to claim promotions for
+                        newcomers and regular users.
+                    </p>
+                    <div class="markets-card__footer">
+                        <span>Sign Up and start betting now</span>
+                        <a href="#" class="markets-card__btn">Bet on volleyball</a>
+                        <a href="#" class="markets-card__btn markets-card__btn--mobile">Bet Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="markets-card">
+                <div class="markets-card__icon">
+                    <img src="assets/icons/tennis-icon.svg" alt="Tennis">
+                </div>
+                <div class="markets-card__content">
+                    <h3 class="markets-card__title">Tennis</h3>
+                    <p class="markets-card__desc">
+                        1win Canada is a leading multi-language online casino and bookmaker that operates under the
+                        Curacao license. The platform features positive feedback from regular customers on independent
+                        review sites (for example, 3.9 of 5 possible on Trustpilot and 8/10 on CasinoMentor).
+                        <br><br>
+                        The site offers live streams and competitive odds on most minor and world sports events. If you
+                        are a gambling fan, 1win in Canada offers thousands of slots, table, card, crash, and live
+                        dealer games. To boost your gaming/betting experience, feel free to claim promotions for
+                        newcomers and regular users.
+                    </p>
+                    <div class="markets-card__footer">
+                        <span>Sign Up and start betting now</span>
+                        <a href="#" class="markets-card__btn">Bet on tennis</a>
+                        <a href="#" class="markets-card__btn markets-card__btn--mobile">Bet Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="markets-card">
+                <div class="markets-card__icon">
+                    <img src="assets/icons/volleyball-icon.svg" alt="Volleyball">
+                </div>
+                <div class="markets-card__content">
+                    <h3 class="markets-card__title">Volleyball</h3>
+                    <p class="markets-card__desc">
+                        1win Canada is a leading multi-language online casino and bookmaker that operates under the
+                        Curacao license. The platform features positive feedback from regular customers on independent
+                        review sites (for example, 3.9 of 5 possible on Trustpilot and 8/10 on CasinoMentor).
+                        <br><br>
+                        The site offers live streams and competitive odds on most minor and world sports events. If you
+                        are a gambling fan, 1win in Canada offers thousands of slots, table, card, crash, and live
+                        dealer games. To boost your gaming/betting experience, feel free to claim promotions for
+                        newcomers and regular users.
+                    </p>
+                    <div class="markets-card__footer">
+                        <span>Sign Up and start betting now</span>
+                        <a href="#" class="markets-card__btn">Bet on volleyball</a>
+                        <a href="#" class="markets-card__btn markets-card__btn--mobile">Bet Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="deposit-block">
+        <h2 class="deposit-block__title">How to Deposit?</h2>
+        <p class="deposit-block__desc">
+            If you want to top up the balance, stick to the following algorithm.
+        </p>
+        <div class="deposit-block__steps">
+            <div class="deposit-step-card">
+                <div class="deposit-step-card__step">Step 1</div>
+                <img src="assets/img/step1.png" alt="Step 1" class="deposit-step-card__img">
+                <div class="deposit-step-card__info">
+                    <strong>Open your personal profile.</strong> Use your personal data to sign in on the 1Win’s site.
+                </div>
+                <a href="#" class="deposit-step-card__btn deposit-step-card__btn--green">Open website</a>
+            </div>
+            <div class="deposit-step-card">
+                <div class="deposit-step-card__step">Step 2</div>
+                <img src="assets/img/step1.png" alt="Step 2" class="deposit-step-card__img">
+                <div class="deposit-step-card__info">
+                    <strong>Choose a payment method.</strong> Select the most convenient option from the list below.
+                </div>
+            </div>
+            <div class="deposit-step-card">
+                <div class="deposit-step-card__step">Step 3</div>
+                <img src="assets/img/step1.png" alt="Step 3" class="deposit-step-card__img">
+                <div class="deposit-step-card__info">
+                    <strong>Deposit funds.</strong> Enter the deposit amount and complete the payment.
+                </div>
+            </div>
+        </div>
+        <div class="deposit-block__table-wrapper">
+            <table class="deposit-table">
+                <thead>
+                <tr>
+                    <th>Payments method</th>
+                    <th>Deposit Limits</th>
+                    <th>Withdrawal Limits</th>
+                    <th>Withdrawal Processing Time</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <img src="assets/icons/visa-2-icon.svg" alt="Visa" class="deposit-table__icon"> Visa
+                    </td>
+                    <td>₱100 – ₱100,000</td>
+                    <td>₱200 – ₱100,000</td>
+                    <td>Instant</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="assets/icons/tether.svg" alt="Tether" class="deposit-table__icon"> Tether
+                    </td>
+                    <td>₱500 – ₱500,000</td>
+                    <td>₱500 – ₱300,000</td>
+                    <td>Up to 10 minutes</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="assets/icons/payeer-2-icon.svg" alt="Payeer" class="deposit-table__icon"> Payeer
+                    </td>
+                    <td>₱200 – ₱50,000</td>
+                    <td>₱500 – ₱30,000</td>
+                    <td>Up to 15 minutes</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="assets/icons/skrill-2-icon.svg" alt="Skrill" class="deposit-table__icon"> Skrill
+                    </td>
+                    <td>₱500 – ₱200,000</td>
+                    <td>₱1,000 – ₱100,000</td>
+                    <td>Up to 24 hours</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 </div>

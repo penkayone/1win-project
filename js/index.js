@@ -179,3 +179,38 @@ document.addEventListener('DOMContentLoaded', function() {
     countryBtn.addEventListener('click', handleMobileClick);
     document.addEventListener('click', handleDocumentClick);
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    document.querySelector('.mobile-bottom-nav__item--menu').addEventListener('click', function(e){
+        e.preventDefault();
+        document.getElementById('mobileMenu').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+
+    document.getElementById('closeMenu').onclick = function(){
+        document.getElementById('mobileMenu').style.display = 'none';
+        document.body.style.overflow = '';
+    };
+
+    document.getElementById('mobileMenu').addEventListener('click', function(e){
+        if(e.target === this){
+            this.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const dropdown = document.querySelector('.menu-dropdown');
+    const toggle = dropdown.querySelector('.menu-dropdown__toggle');
+    toggle.addEventListener('click', function (e) {
+        e.stopPropagation();
+        dropdown.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function (e) {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+        }
+    });
+});
