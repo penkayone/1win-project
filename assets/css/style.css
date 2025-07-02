@@ -578,6 +578,8 @@ body {
     .app-block                 { order: 11; }
     .markets-block             { order: 12; }
     .deposit-block             { order: 13; }
+    .subscribe-block           { order: 14; }
+    .faq-block                 { order: 15; }
 }
 
 /*
@@ -2350,5 +2352,185 @@ body {
     }
     .deposit-block .deposit-block__desc {
         margin-bottom: 20px;
+    }
+}
+
+/*
+    Subscribe Block
+ */
+.subscribe-block {
+    margin-bottom: 60px;
+}
+.subscribe-block .subscribe-block__grid {
+    display: grid;
+    grid-template-columns: 150px 1fr 1.3fr;
+    align-items: center;
+    gap: 40px;
+    background: var(--color-nav-bg);
+    border-radius: 20px;
+    padding: 32px 30px;
+}
+.subscribe-block .subscribe-block__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.subscribe-block .subscribe-block__title {
+    color: var(--color-text);
+    font-size: 22px;
+    line-height: 32px;
+    font-weight: 700;
+}
+.subscribe-block .subscribe-block__desc {
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+}
+.subscribe-block .subscribe-block__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.subscribe-block .subscribe-block__input {
+    padding: 13px 16px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: var(--color-text);
+}
+.subscribe-block .subscribe-block__btn {
+    padding: 13px 0;
+    border: none;
+    border-radius: 20px;
+    background: var(--color-accent);
+    color: var(--color-text);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.subscribe-block .subscribe-block__policy {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.subscribe-block .subscribe-block__policy input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+}
+@media (max-width: 900px) {
+    .subscribe-block {
+        margin-bottom: 50px;
+    }
+    .subscribe-block .subscribe-block__grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 16px;
+        padding: 16px;
+    }
+    .subscribe-block .subscribe-block__title {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 32px;
+    }
+    .subscribe-block .subscribe-block__desc {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 24px;
+    }
+    .subscribe-block .subscribe-block__info {
+        text-align: center;
+    }
+}
+
+/*
+    Faq Block
+ */
+.faq-block {
+    margin-bottom: 60px;
+}
+.faq-block .faq-block__title {
+    color: var(--color-text);
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    line-height: 34px;
+}
+.faq-block .faq-block__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.faq-block .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.faq-block .faq-item {
+    background-color: var(--color-nav-bg);
+    border-radius: 20px;
+    transition: background 0.18s;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+.faq-block .faq-item.active {
+    border-color: var(--color-accent);
+    padding-bottom: 20px;
+}
+.faq-block .faq-item__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 20px 16px 20px;
+}
+.faq-block .faq-item__question {
+    color: var(--color-text);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+}
+.faq-block .faq-item__toggle {
+    background: var(--color-btn-bg);
+    border-radius: 50%;
+    border: none;
+    color: var(--color-text);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    transition: color .16s;
+}
+.faq-block .faq-item.active .faq-item__toggle {
+    background-color: var(--color-accent);
+    border-radius: 50%;
+}
+.faq-block .faq-item__body {
+    color: var(--color-text);
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 0 20px 0 20px;
+    max-height: 0;
+    opacity: 0;
+    transition:
+            max-height 0.35s cubic-bezier(.4,0,.2,1),
+            opacity 0.25s linear,
+            padding 0.2s;
+}
+@media (max-width: 900px) {
+    .faq-block {
+        margin-bottom: 50px;
+    }
+    .faq-block .faq-block__grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }

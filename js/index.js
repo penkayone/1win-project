@@ -214,3 +214,68 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    function updateActiveFaqBodies() {
+        document.querySelectorAll('.faq-item.active .faq-item__body').forEach(el => {
+            el.style.maxHeight = el.scrollHeight + "px";
+            el.style.opacity = 1;
+            el.style.paddingBottom = window.innerWidth <= 795 ? "20px" : "18px";
+
+            const btn = el.closest('.faq-item').querySelector('.faq-item__toggle');
+            if (btn) {
+                const iconClose = btn.querySelector('.icon-close');
+                const iconPlus = btn.querySelector('.icon-plus');
+                if (iconClose && iconPlus) {
+                    iconClose.style.display = '';
+                    iconPlus.style.display = 'none';
+                }
+            }
+        });
+    }
+    function updateInactiveFaqButtons() {
+        document.querySelectorAll('.faq-item:not(.active) .faq-item__toggle').forEach(btn => {
+            const iconClose = btn.querySelector('.icon-close');
+            const iconPlus = btn.querySelector('.icon-plus');
+            if (iconClose && iconPlus) {
+                iconClose.style.display = 'none';
+                iconPlus.style.display = '';
+            }
+        });
+    }
+    updateActiveFaqBodies();
+    updateInactiveFaqButtons();
+
+    window.addEventListener('resize', () => {
+        updateActiveFaqBodies();
+    });
+    document.querySelectorAll('.faq-item__toggle').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const item = btn.closest('.faq-item');
+            const body = item.querySelector('.faq-item__body');
+            const iconClose = btn.querySelector('.icon-close');
+            const iconPlus = btn.querySelector('.icon-plus');
+            if (item.classList.contains('active')) {
+                // Закрываем
+                body.style.maxHeight = null;
+                body.style.opacity = 0;
+                body.style.paddingBottom = "0";
+                item.classList.remove('active');
+                if (iconClose && iconPlus) {
+                    iconClose.style.display = 'none';
+                    iconPlus.style.display = '';
+                }
+            } else {
+                // Открываем
+                item.classList.add('active');
+                body.style.maxHeight = body.scrollHeight + "px";
+                body.style.opacity = 1;
+                body.style.paddingBottom = window.innerWidth <= 795 ? "20px" : "18px";
+                if (iconClose && iconPlus) {
+                    iconClose.style.display = '';
+                    iconPlus.style.display = 'none';
+                }
+            }
+        });
+    });
+});
