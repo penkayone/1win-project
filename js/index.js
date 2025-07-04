@@ -256,7 +256,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const iconClose = btn.querySelector('.icon-close');
             const iconPlus = btn.querySelector('.icon-plus');
             if (item.classList.contains('active')) {
-                // Закрываем
                 body.style.maxHeight = null;
                 body.style.opacity = 0;
                 body.style.paddingBottom = "0";
@@ -266,7 +265,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     iconPlus.style.display = '';
                 }
             } else {
-                // Открываем
                 item.classList.add('active');
                 body.style.maxHeight = body.scrollHeight + "px";
                 body.style.opacity = 1;
