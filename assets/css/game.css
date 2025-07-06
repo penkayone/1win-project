@@ -4,7 +4,7 @@
 .promo-jetx-block {
     margin: 40px 0 60px 0;
 }
-.promo-jetx-block__container {
+.promo-jetx-block .promo-jetx-block__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
@@ -12,51 +12,51 @@
     border-radius: 20px;
     padding: 30px;
 }
-.promo-jetx-block__info {
+.promo-jetx-block .promo-jetx-block__info {
     display: flex;
     flex-direction: column;
 }
-.promo-jetx-block__breadcrumbs {
+.promo-jetx-block .promo-jetx-block__breadcrumbs {
     font-size: 14px;
     margin-bottom: 16px;
     font-weight: 500;
     line-height: 20px;
 }
-.promo-jetx-block__breadcrumbs a {
+.promo-jetx-block .promo-jetx-block__breadcrumbs a {
     color: var(--color-accent);
     text-decoration: none;
     font-weight: 500;
     transition: opacity .2s;
 }
-.promo-jetx-block__breadcrumbs a:hover {
+.promo-jetx-block .promo-jetx-block__breadcrumbs a:hover {
     opacity: 1;
     text-decoration: underline;
 }
-.promo-jetx-block__breadcrumbs span {
+.promo-jetx-block .promo-jetx-block__breadcrumbs span {
     color: var(--color-text);
     font-weight: 700;
 }
-.promo-jetx-block__title {
+.promo-jetx-block .promo-jetx-block__title {
     font-size: 40px;
     font-weight: 700;
     color: var(--color-text);
     margin-bottom: 16px;
     line-height: 48px;
 }
-.promo-jetx-block__desc {
+.promo-jetx-block .promo-jetx-block__desc {
     font-size: 17px;
     color: var(--color-text);
     font-weight: 300;
     line-height: 22px;
 }
-.promo-jetx-block__media {
+.promo-jetx-block .promo-jetx-block__media {
     position: relative;
     display: flex;
     align-items: center;
     border-radius: 20px;
     overflow: hidden;
 }
-.promo-jetx-block__play-btn.popular-play-btn {
+.promo-jetx-block .promo-jetx-block__play-btn.popular-play-btn {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -79,20 +79,20 @@
     align-items: center;
     gap: 6px;
 }
-.promo-jetx-block__play-btn:hover {
+.promo-jetx-block .promo-jetx-block__play-btn:hover {
     background-color: #004ADF;
     box-shadow: 0 8px 36px 0 rgba(0, 80, 186, 0.18);
 }
 @media (max-width: 900px) {
-    .promo-jetx-block__container {
+    .promo-jetx-block .promo-jetx-block__container {
         grid-template-columns: 1fr;
         padding: 16px;
     }
-    .promo-jetx-block__title {
+    .promo-jetx-block .promo-jetx-block__title {
         font-size: 30px;
         line-height: 36px;
     }
-    .promo-jetx-block__play-btn.popular-play-btn {
+    .promo-jetx-block .promo-jetx-block__play-btn.popular-play-btn {
         padding: var(--padding);
     }
 }

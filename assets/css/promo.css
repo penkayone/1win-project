@@ -1,0 +1,368 @@
+/*
+    Promo Code Block
+*/
+.promo-code-block {
+    margin: 40px 0 60px 0;
+}
+.promo-code-block__container {
+    display: grid;
+    grid-template-columns: 1fr 370px;
+    gap: 30px;
+    background: var(--color-background);
+    border-radius: 20px;
+    padding: 30px;
+}
+.promo-code-block__info {
+    display: flex;
+    flex-direction: column;
+}
+.promo-code-block__breadcrumbs {
+    font-size: 14px;
+    color: var(--color-accent);
+    line-height: 20px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+.promo-code-block__breadcrumbs a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity .2s;
+}
+.promo-code-block__breadcrumbs a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+.promo-code-block__breadcrumbs span {
+    color: var(--color-text);
+    font-weight: 500;
+}
+.promo-code-block__title {
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 16px;
+    line-height: 48px;
+}
+.promo-code-block__desc {
+    font-size: 16px;
+    color: var(--color-text);
+    line-height: 22px;
+    font-weight: 300;
+}
+.promo-code-block__bonus {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+.promo-code-block__bonus-inner {
+    background: var(--color-hover);
+    border: 2px dashed var(--color-accent);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.promo-code-block__bonus-title {
+    color: var(--color-text);
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+.promo-code-block__promo-row,
+.promo-gift-block__row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.promo-code-block__input-wrap {
+    position: relative;
+    background: var(--color-text);
+    border-radius: 20px;
+    padding: 0 16px;
+    height: 48px;
+    min-width: 202px;
+    width: 220px;
+    box-shadow: 0 2px 12px 0 rgba(60,120,250,0.03);
+    display: flex;
+    align-items: center;
+}
+.promo-code-block__input {
+    font-weight: 600;
+    color: var(--color-bg);
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0;
+    font-size: 18px;
+    border: none;
+    background: transparent;
+    letter-spacing: 1px;
+    user-select: all;
+}
+.promo-code-block__input-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background: var(--color-text);
+    transition: background 0.18s;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center; justify-content: center;
+    padding: 0;
+}
+.promo-code-block__input-btn:hover,
+.promo-code-block__input-btn.copied {
+    background: var(--color-accent);
+}
+.promo-code-block__input-btn:hover .promo-code-block__input-icon,
+.promo-code-block__input-btn.copied .promo-code-block__input-icon {
+    stroke: var(--color-text);
+}
+.promo-code-block__input-btn svg {
+    display: block;
+}
+.promo-code-block__copied-alert {
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    background: #22C55E;
+    color: var(--color-text);
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 11px 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.23s, transform 0.23s;
+    z-index: 10;
+    box-shadow: 0 4px 22px 0 rgba(34,197,94,0.13);
+    transform: translateY(8px) scale(0.96);
+}
+.promo-code-block__input-btn.copied .promo-code-block__copied-alert,
+.promo-code-block__copied-alert.active {
+    opacity: 1;
+    transform: translateY(-16px) scale(1);
+}
+.promo-code-block__register-btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: var(--padding);
+    text-decoration: none;
+    transition: background .18s, box-shadow .18s;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.15);
+    border: none;
+    cursor: pointer;
+    gap: 8px;
+    min-width: 202px;
+    justify-content: center;
+}
+.promo-code-block__register-btn:hover {
+    background: #004ADF;
+}
+
+/*
+    Promo Gift Block
+*/
+.promo-gift-block {
+    margin-bottom: 60px;
+}
+.promo-gift-block__container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 2px dashed var(--color-accent);
+}
+.promo-gift-block__img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0; top: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+.promo-gift-block__content {
+    position: relative;
+    width: 100%;
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+.promo-gift-block__title {
+    color: var(--color-text);
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 28px;
+    text-align: center;
+    text-shadow: 0 4px 32px rgba(0,0,0,0.25);
+}
+
+/*
+    Bonuses Safe And Legal
+*/
+.bonuses-block {
+    display: none;
+}
+@media (max-width: 900px) {
+    .bonuses-block {
+        display: block;
+    }
+}
+
+.safe-legal-block {
+    margin-bottom: var(--margin);
+    display: block;
+}
+.safe-legal-block .safe-legal-card {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.safe-legal-block .safe-legal-card__img img {
+    border-radius: 20px;
+    max-width: 100%;
+}
+.safe-legal-block .safe-legal-card__content {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.safe-legal-block .safe-legal-card__title {
+    color: var(--color-accent);
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+.safe-legal-block .safe-legal-card__desc {
+    color: var(--color-text);
+    font-size: 16px;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+.safe-legal-block .safe-legal-card__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.safe-legal-block .safe-legal-card__list li {
+    display: flex;
+    align-items: flex-start;
+    color: var(--color-text);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    gap: 16px;
+}
+
+/*
+    Responsive
+*/
+@media (max-width: 900px) {
+    .promo-code-block {
+        margin-bottom: 50px;
+    }
+    .promo-code-block__container {
+        grid-template-columns: 1fr;
+        padding: 16px;
+        gap: 30px;
+    }
+    .promo-code-block__title {
+        font-size: 30px;
+        margin-bottom: 16px;
+        line-height: 36px;
+    }
+    .promo-code-block__bonus-inner {
+        width: 100%;
+    }
+    .main-sections-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .bonuses-section {
+        order: 2;
+    }
+    .promo-gift-block {
+        order: 6;
+        margin-bottom: 50px;
+    }
+    .promo-gift-block__content {
+        padding: 20px;
+    }
+    .promo-gift-block__title {
+        margin-bottom: 16px;
+        text-align: center;
+        line-height: 28px;
+    }
+    .promo-code-block__promo-row,
+    .promo-gift-block__row {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .promo-code-block__input-wrap,
+    .promo-code-block__register-btn {
+        width: 100%;
+        min-width: 0;
+        max-width: 100vw;
+        justify-content: flex-start;
+    }
+    .promo-code-block__input {
+        font-size: 16px;
+    }
+
+    /* Safe Legal Block mobile */
+    .safe-legal-block {
+        margin-bottom: 50px;
+        display: none;
+    }
+    .safe-legal-block .safe-legal-card {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .safe-legal-block .safe-legal-card__title {
+        grid-row: 1;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .safe-legal-block .safe-legal-card__img {
+        margin-bottom: 20px;
+    }
+    .safe-legal-block .safe-legal-card__content {
+        grid-row: 3 / span 2;
+        display: contents;
+    }
+    .safe-legal-block .safe-legal-card__desc {
+        grid-row: 3;
+        font-size: 16px;
+        line-height: 22px;
+        color: var(--color-text);
+        margin-bottom: 20px;
+    }
+    .safe-legal-block .safe-legal-card__list {
+        grid-row: 4;
+    }
+}

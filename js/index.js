@@ -277,3 +277,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+function copyPromoCode() {
+    const input = document.getElementById('promoInput');
+    input.select();
+    input.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    const alert = document.getElementById('promoCopiedAlert');
+    alert.classList.add('active');
+    setTimeout(() => {
+        alert.classList.remove('active');
+    }, 1350);
+}
+document.addEventListener('click', function(e) {
+    const btn = e.target.closest('.promo-code-block__input-btn');
+    if (!btn) return;
+    const wrap = btn.closest('.promo-code-block__input-wrap');
+    const input = wrap.querySelector('.promo-code-block__input');
+    const alert = btn.querySelector('.promo-code-block__copied-alert');
+    if (!input) return;
+    navigator.clipboard.writeText(input.value);
+    btn.classList.add('copied');
+    if (alert) {
+        clearTimeout(btn._promoAlertTimer);
+        btn._promoAlertTimer = setTimeout(() => {
+            btn.classList.remove('copied');
+        }, 1500);
+    }
+});
