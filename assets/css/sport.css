@@ -62,7 +62,8 @@
     transition: background 0.18s;
 }
 .promo-jetx-bet-block .promo-jetx-bet-block__cta-btn:hover {
-    background: #004ADF;
+    background-color: var(--color-btn-hover);
+    color: var(--color-text);
 }
 .promo-jetx-bet-block .promo-jetx-bet-block__media {
     display: flex;
@@ -163,6 +164,10 @@
     text-decoration: none;
     transition: background .18s;
     border: none;
+}
+.main-sports-block .main-sports-block__signup-btn:hover {
+    background-color: var(--color-secondary-btn-hover);
+    color: var(--color-text);
 }
 .main-sports-block .main-sports-block__sports-grid {
     display: grid;

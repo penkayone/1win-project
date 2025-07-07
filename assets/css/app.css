@@ -93,6 +93,10 @@
     min-width: 265px;
     justify-content: center;
 }
+.promo-app-block .app-btn:hover {
+    background-color: var(--color-secondary-btn-hover);
+    color: var(--color-text);
+}
 .promo-app-block .promo-app-block__downloads {
     color: var(--color-text);
     font-size: 14px;

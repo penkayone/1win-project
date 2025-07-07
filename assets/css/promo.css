@@ -175,7 +175,8 @@
     justify-content: center;
 }
 .promo-code-block__register-btn:hover {
-    background: #004ADF;
+    background-color: var(--color-btn-hover);
+    color: var(--color-text);
 }
 
 /*

@@ -1,0 +1,46 @@
+.error-section {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 76px 0;
+    text-align: center;
+}
+.error-section .error-container {
+    padding: 40px 0 76px 0;
+    max-width: 630px;
+}
+.error-section .error-title {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 50px;
+    color: var(--color-accent);
+    margin-bottom: 16px;
+}
+.error-section .error-desc {
+    font-size: 18px;
+    font-weight: 300;
+    align-items: center;
+    color: var(--color-text);
+    margin-bottom: 32px;
+    line-height: 22px;
+}
+.error-section .error-btn {
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    padding: 12px 30px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background 0.18s;
+}
+.error-section .error-btn:hover {
+    background-color: var(--color-btn-hover);
+}
+@media (max-width: 900px) {
+    .error-section {
+        margin-bottom: 50px;
+    }
+    .error-section .error-container {
+        padding: 20px 16px 60px 16px;
+    }
+}

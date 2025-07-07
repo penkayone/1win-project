@@ -80,7 +80,8 @@
     gap: 6px;
 }
 .promo-jetx-block .promo-jetx-block__play-btn:hover {
-    background-color: #004ADF;
+    background-color: var(--color-btn-hover);
+    color: var(--color-text);
     box-shadow: 0 8px 36px 0 rgba(0, 80, 186, 0.18);
 }
 @media (max-width: 900px) {
@@ -179,7 +180,8 @@
     border: none;
 }
 .popular-games-block .popular-play-btn:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-btn-hover);
+    color: var(--color-text);
     box-shadow: 0 8px 36px 0 rgba(0, 80, 186, 0.18);
 }
 @media (max-width: 900px) {

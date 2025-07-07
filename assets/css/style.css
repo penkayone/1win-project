@@ -4,12 +4,15 @@
 :root {
     --color-bg: #0A0C12;
     --color-accent: #006AFF;
+    --color-header-btn: #7B8292;
     --color-secondary-btn: #3ACE01;
+    --color-secondary-btn-hover: #2DC100;
     --color-secondary-shadow: #2DC100;
     --color-text: #FFFFFF;
     --color-background: #1B2232;
     --color-btn-bg: #363E56;
     --color-hover: #2B3242;
+    --color-btn-hover: #004ADF;
     --purple-background: #7547F3;
     --radius-nav: 100px;
     --margin: 60px;
@@ -66,16 +69,30 @@ body {
     border: none;
     transition: background 0.16s, color 0.16s, border 0.16s, box-shadow 0.18s;
 }
+.header .header__top-btn:hover {
+    background-color: var(--color-header-btn);
+    color: var(--color-text);
+}
 .header .header__top-btn--accent {
     background: transparent;
     border: 2px solid var(--color-accent);
     color: var(--color-accent);
+}
+.header .header__top-btn--accent:hover {
+    background: var(--color-btn-hover);
+    color: var(--color-text);
+    border-color: var(--color-accent);
 }
 .header .header__top-btn--signup {
     background: var(--color-secondary-btn);
     color: var(--color-text);
     font-weight: 500;
     box-shadow: 0 0 10px 0 var(--color-secondary-shadow);
+}
+.header .header__top-btn--signup:hover {
+    background: var(--color-secondary-btn-hover);
+    color: var(--color-text);
+    box-shadow: var(--color-secondary-btn-hover);
 }
 .header .header__top-btn .gift-glow {
     background: var(--color-accent);
@@ -130,11 +147,6 @@ body {
 }
 .header .header__nav-link--more {
     margin-right: 26px;
-}
-.header .header__nav-link--active,
-.header .header__nav-link--active:focus,
-.header .header__nav-link--active:hover {
-    color: var(--color-accent);
 }
 .header .header__nav-link--active .dropdown__arrow {
     color: var(--color-accent);
@@ -365,7 +377,7 @@ body {
 }
 .footer .footer__country-btn:hover,
 .footer .footer__country:hover .footer__country-btn {
-    background-color: var(--color-btn-bg);
+    background-color: var(--color-hover);
 }
 .footer .footer__arrow {
     transition: transform 0.3s, stroke 0.2s;
@@ -428,6 +440,10 @@ body {
     transition: background .2s;
     width: 100%;
     max-width: 220px;
+}
+.footer .footer__download-btn:hover {
+    background-color: var(--color-btn-hover);
+    color: var(--color-text);
 }
 .footer .footer__bottom {
     margin-top: 30px;
@@ -919,6 +935,10 @@ body {
     display: inline-block;
     transition: background 0.16s;
 }
+.bonus-block__btn:hover {
+    background-color: var(--color-secondary-btn-hover);
+    color: var(--color-text);
+}
 .bonus-block .bonus-block__btn--mobile {
     display: none;
 }
@@ -1060,6 +1080,10 @@ body {
     padding: var(--padding);
     text-decoration: none;
     font-weight: 500;
+}
+.cards-block .card__jackpot-btn:hover {
+    background: var(--color-secondary-btn-hover);
+    color: var(--color-text);
 }
 .cards-block .card__icon--desktop {
     display: block;
@@ -1215,7 +1239,8 @@ body {
     border: none;
 }
 .top-games-block .play-now-btn:hover {
-    background-color: var(--color-accent);
+    background-color: var(--color-btn-hover);
+    color: var(--color-text);
     box-shadow: 0 8px 36px 0 rgba(0, 80, 186, 0.18);
 }
 @media (max-width: 900px) {
@@ -1589,6 +1614,7 @@ body {
 .app-block .app-card__buttons {
     display: flex;
     gap: 10px;
+    justify-content: center;
     flex-wrap: wrap;
 }
 .app-block .app-btn {
@@ -1600,6 +1626,10 @@ body {
     padding: var(--padding);
     text-decoration: none;
     background-color: var(--color-secondary-btn);
+    color: var(--color-text);
+}
+.app-block .app-btn:hover {
+    background-color: var(--color-secondary-btn-hover);
     color: var(--color-text);
 }
 .app-block .app-btn__icon {
@@ -1826,6 +1856,10 @@ body {
     transition: background .16s;
     box-shadow: 0 1px 8px rgba(39, 189, 50, 0.07);
 }
+.bonuses-block .bonus-card__btn:hover {
+    background: var(--color-secondary-btn-hover);
+    color: var(--color-text);
+}
 @media (max-width: 900px) {
     .bonuses-block {
         margin-bottom: 50px;
@@ -1907,6 +1941,10 @@ body {
     transition: background 0.18s;
     box-shadow: 0 2px 10px 0 rgba(0, 106, 255, 0.14);
 }
+.bonuses-hero-block .bonuses-hero-block__cta:hover {
+    background: var(--color-btn-hover);
+    color: var(--color-text);
+}
 .bonuses-hero-block .bonuses-hero-block__img {
     display: block;
     border-radius: 20px;
@@ -1969,6 +2007,10 @@ body {
     padding: 13px 16px;
     text-decoration: none;
     transition: background 0.18s;
+}
+.bonuses-hero-block .bonuses-hero-card__btn:hover {
+    background: var(--color-btn-hover);
+    color: var(--color-text);
 }
 .bonuses-hero-block .bonuses-hero-block__registration-btn {
     display: none;
@@ -2104,7 +2146,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 2px solid #7B8292;
+    border-top: 2px solid var(--color-header-btn);
     padding-top: 16px;
     gap: 20px;
 }
@@ -2125,6 +2167,10 @@ body {
     text-decoration: none;
     transition: background 0.18s;
     box-shadow: 0 2px 10px 0 rgba(0, 106, 255, 0.10);
+}
+.markets-block .markets-card__btn:hover {
+    background: var(--color-btn-hover);
+    color: var(--color-text);
 }
 .markets-block .markets-card__btn--mobile {
     display: none;
@@ -2244,6 +2290,10 @@ body {
     font-size: 16px;
     transition: background 0.18s;
 }
+.deposit-block .deposit-step-card__btn--green:hover {
+    background-color: var(--color-secondary-btn-hover);
+    color: var(--color-text);
+}
 .deposit-block .deposit-block__table-wrapper {
     margin-top: 30px;
 }
@@ -2264,7 +2314,7 @@ body {
 }
 .deposit-block .deposit-table tbody td {
     padding: 16px 10px;
-    border-top: 1px solid #232537;
+    border-top: 1px solid var(--color-btn-bg);
     color: var(--color-text);
     vertical-align: middle;
 }
@@ -2366,6 +2416,10 @@ body {
     line-height: 22px;
     font-weight: 600;
     margin-bottom: 10px;
+}
+.subscribe-block .subscribe-block__btn:hover {
+    background-color: var(--color-btn-hover);
+    color: var(--color-text);
 }
 .subscribe-block .subscribe-block__policy {
     font-size: 16px;
